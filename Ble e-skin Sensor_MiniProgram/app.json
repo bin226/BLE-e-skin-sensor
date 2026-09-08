@@ -1,0 +1,12 @@
+{
+    "pages": [
+        "index/index",
+        "deviceDetail/deviceDetail"
+    ],
+    "window": {
+        "backgroundTextStyle": "light",
+        "navigationBarBackgroundColor": "#fff",
+        "navigationBarTitleText": "BLE Sensor",
+        "navigationBarTextStyle": "black"
+    }
+}

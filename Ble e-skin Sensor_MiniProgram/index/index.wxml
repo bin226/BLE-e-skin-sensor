@@ -1,0 +1,55 @@
+<wxs module="utils">
+module.exports.max = function(n1, n2) {
+  return Math.max(n1, n2)
+}
+module.exports.len = function(arr) {
+  arr = arr || []
+  return arr.length
+}
+</wxs>
+
+<view class="container">
+    <view class="header">
+        <view class="title">BLE Sensor Scanner</view>
+        <view class="subtitle">Discover nearby devices</view>
+    </view>
+
+    <view class="summary-card">
+        <view class="summary-icon">📡</view>
+        <view class="summary-text">
+            <text class="summary-count">{{devices.length}}</text>
+            <text class="summary-label">device(s) found</text>
+        </view>
+    </view>
+
+    <scroll-view class="device_list" scroll-y scroll-with-animation>
+        <view wx:for="{{devices}}" wx:key="index"
+         data-device-id="{{item.deviceId}}"
+         data-name="{{item.name || item.localName}}"
+         data-rssi="{{item.RSSI}}"
+         bindtap="navigateToDeviceDetail" 
+         class="device_item"
+         hover-class="device_item_hover">
+            <view class="device-header">
+                <view class="device-name">{{item.name}}</view>
+                <view class="device-rssi {{item.RSSI >= -50? 'rssi-good' : item.RSSI >= -70? 'rssi-medium' : 'rssi-poor'}}">
+                    {{item.RSSI}}dBm
+                </view>
+            </view>
+            <view class="device-details">
+                <view class="detail-item">
+                    <text class="detail-label">Signal</text>
+                    <text class="detail-value">{{utils.max(0, item.RSSI + 100)}}%</text>
+                </view>
+                <view class="detail-item">
+                    <text class="detail-label">UUID</text>
+                    <text class="detail-value uuid">{{item.deviceId}}</text>
+                </view>
+                <view class="detail-item">
+                    <text class="detail-label">Services</text>
+                    <text class="detail-value">{{utils.len(item.advertisServiceUUIDs)}}</text>
+                </view>
+            </view>
+        </view>
+    </scroll-view>
+</view>

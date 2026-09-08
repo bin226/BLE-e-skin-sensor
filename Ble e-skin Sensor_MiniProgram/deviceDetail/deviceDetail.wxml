@@ -1,0 +1,55 @@
+<view class="container">
+    <!-- Chart Card -->
+    <view class="chart-card">
+        <view class="card-title">Voltage Timeline</view>
+        <view class="chart-wrapper">
+            <canvas id="voltageChart" type="2d" style="width: 100%; height: 240px;"></canvas>
+        </view>
+        <view class="current-data">
+            <view class="data-item">
+                <text class="data-label">Current Time</text>
+                <text class="data-value">{{currentTime}}</text>
+            </view>
+            <view class="data-item">
+                <text class="data-label">Current Voltage</text>
+                <text class="data-value">{{currentVoltage}}</text>
+            </view>
+        </view>
+    </view>
+
+    <!-- Output Card -->
+    <view class="output-card">
+        <view class="card-title">Data Output</view>
+        <view class="binary-section">
+            <view class="section-label">Binary History ({{binaryLength}} bits)</view>
+            <view class="binary-data">{{binaryDisplay}}</view>
+        </view>
+        <view class="text-section">
+            <view class="section-label">Text Output</view>
+            <view class="text-data">{{textOutput}}</view>
+        </view>
+    </view>
+
+    <!-- Status Card -->
+    <view class="status-card">
+        <view class="card-title">System Status</view>
+        <view class="status-grid">
+            <view class="status-item">
+                <text class="status-label">Event State</text>
+                <text class="status-value">{{eventState}}</text>
+            </view>
+            <view class="status-item">
+                <text class="status-label">Last Output</text>
+                <text class="status-value">{{lastOutput}}</text>
+            </view>
+            <view class="status-item">
+                <text class="status-label">Suppressed</text>
+                <text class="status-value {{isSuppressed ? 'suppressed-yes' : 'suppressed-no'}}">{{isSuppressedText}}</text>
+            </view>
+            <view class="status-item" wx:if="{{isSuppressed}}">
+                <text class="status-label">Suppress Time</text>
+                <text class="status-value">{{suppressTime}}</text>
+            </view>
+        </view>
+    </view>
+</view>

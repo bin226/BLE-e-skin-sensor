@@ -1,0 +1,157 @@
+page {
+    background: linear-gradient(180deg, #f8fafc 0%, #e2e8f0 100%);
+    min-height: 100vh;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.container {
+    padding: 16px;
+}
+
+/* Header */
+.header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 16px;
+    padding: 24px 20px;
+    margin-bottom: 16px;
+    text-align: center;
+    box-shadow: 0 10px 40px rgba(102, 126, 234, 0.3);
+}
+
+.title {
+    color: #fff;
+    font-size: 36rpx;
+    font-weight: 700;
+    margin-bottom: 6px;
+    letter-spacing: 1px;
+}
+
+.subtitle {
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 24rpx;
+}
+
+/* Summary Card */
+.summary-card {
+    background: #fff;
+    border-radius: 16px;
+    padding: 20px;
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.summary-icon {
+    font-size: 48rpx;
+}
+
+.summary-text {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+}
+
+.summary-count {
+    color: #667eea;
+    font-size: 40rpx;
+    font-weight: 700;
+}
+
+.summary-label {
+    color: #64748b;
+    font-size: 26rpx;
+}
+
+/* Device List */
+.device_list {
+    height: 600px;
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+}
+
+.device_item {
+    padding: 20px;
+    border-bottom: 1px solid #e2e8f0;
+    transition: all 0.2s ease;
+}
+
+.device_item:last-child {
+    border-bottom: none;
+}
+
+.device_item_hover {
+    background: linear-gradient(135deg, #f8fafc 0%, #e0e7ff 100%);
+}
+
+/* Device Item */
+.device-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.device-name {
+    color: #1e293b;
+    font-size: 30rpx;
+    font-weight: 600;
+    flex: 1;
+    margin-right: 12px;
+}
+
+.device-rssi {
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 22rpx;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.rssi-good {
+    background: #dcfce7;
+    color: #166534;
+}
+
+.rssi-medium {
+    background: #fef3c7;
+    color: #92400e;
+}
+
+.rssi-poor {
+    background: #fee2e2;
+    color: #991b1b;
+}
+
+/* Device Details */
+.device-details {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.detail-item {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.detail-label {
+    color: #94a3b8;
+    font-size: 20rpx;
+}
+
+.detail-value {
+    color: #475569;
+    font-size: 24rpx;
+    font-weight: 500;
+}
+
+.detail-value.uuid {
+    font-family: 'Monaco', 'Consolas', monospace;
+    font-size: 20rpx;
+    color: #64748b;
+}
